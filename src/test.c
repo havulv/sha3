@@ -5,6 +5,12 @@
 #include <stdint.h>
 #include <stdlib.h>
 
+typedef struct test_vector {
+    int len;
+    unsigned char *msg;
+    unsigned char *md;
+} test_vector;
+
 static unsigned char test_vec_0[] = {0x00};
 
 static unsigned char test_vec_0_ret[] = { 0xA7, 0xFF, 0xC6, 0xF8, 0xBF, 0x1E, 0xD7, 
@@ -138,7 +144,7 @@ static int sha3_256_run_test(unsigned char *vector, int len, unsigned char *ans)
     return response;
 }
 
-static unsigned int len(const unsigned char *x) {
+static unsigned int strlen(const unsigned char *x) {
     unsigned int i = 0;
     while (x[i] != 0x00) {
         i++;
@@ -147,7 +153,7 @@ static unsigned int len(const unsigned char *x) {
 }
 
 static int strcmp(const unsigned char *x, const unsigned char *y) {
-    unsigned int length = len(x) - 1;
+    unsigned int length = strlen(x) - 1;
 
     int i = 0;
     while (i < length) {
@@ -157,7 +163,7 @@ static int strcmp(const unsigned char *x, const unsigned char *y) {
     return 1;
 }
 
-static unsigned char **get_vec_from_file(char *file) {
+static test_vector *get_vec_from_file(char *file) {
     FILE *fp = fopen(file, "r");
     unsigned char *src;
     unsigned char **tests;
@@ -193,13 +199,16 @@ static unsigned char **get_vec_from_file(char *file) {
         if (ferror(fp) != 0) {
             fputs("Error reading file", stdout);
         } else {
-            src[newLen++] = 0x00;
+            src[++newLen] = 0x00;
         }
     }
     fclose(fp);
 
     while (src[ccnt] != 0x00 ) {
-        if (src[ccnt] == 0x0a) {
+        if (src[ccnt] == 0xa &&
+            (strcmp("Len", &src[ccnt + 1]) ||
+             strcmp("Msg", &src[ccnt + 1]) ||
+             strcmp("MD", &src[ccnt + 1]))) {
             lcnt++;
         }
         ccnt++;
@@ -207,17 +216,27 @@ static unsigned char **get_vec_from_file(char *file) {
 
     int *line_len = calloc(sizeof(int), lcnt);
 
+    if (line_len == NULL) {
+        free(line_len);
+        return NULL;
+    }
+
+    for (int i=0; i < lcnt; i++) {
+        line_len[i] = 0;
+    }
+
     int liter = 0;
     int iter = 0;
     int ind = 0;
+    int j = 0;
     while (iter <= ccnt && liter <= lcnt) {
-        if (src[iter] == 0x0a && 
-            (strcmp("Len", src[iter + 1]) ||
-             strcmp("Msg", src[iter + 1]) ||
-             strcmp("MD", src[iter + 1]))) {
+        if (src[iter] == 0xa && 
+            (strcmp("Len", &src[iter + 1]) ||
+             strcmp("Msg", &src[iter + 1]) ||
+             strcmp("MD", &src[iter + 1]))) {
             line_len[liter] = 0;
-            int j = iter+1;
-            while (src[j] != 0x0a) {
+            j = iter+1;
+            while (src[j] != 0xa) {
                 line_len[liter]++;
                 j++;
             }
@@ -225,25 +244,50 @@ static unsigned char **get_vec_from_file(char *file) {
         }
         iter++;
     }
+    printf("line count actual: %d\nline count recorded: %d\n\
+Character Count actual: %d\nCharacter count recorded: %d\n", lcnt, liter, ccnt, iter);
 
     unsigned char **test_vectors = malloc(lcnt);
 
+    if (test_vectors == NULL) {
+        free(test_vectors);
+        free(line_len);
+        free(src);
+        return NULL;
+    }
+
     for (int i=0; i < lcnt; i++) {
         test_vectors[i] = malloc(line_len[i] + 1);
+        if (test_vectors[i] == NULL) {
+            free(test_vectors[i]);
+            free(test_vectors);
+            free(line_len);
+            free(src);
+            return NULL;
+        }
     }
 
     liter = 0;
     iter = 0;
     ind = 0;
+    int back = 0;
     while (iter <= ccnt && liter <= lcnt) {
-        if (src[iter] == 0x0a && 
-            (strcmp("Len", src[iter + 1]) ||
-             strcmp("Msg", src[iter + 1]) ||
-             strcmp("MD", src[iter + 1]))) {
-            for (int i=0; i < line_len[liter]; i++) {
-                test_vectors[liter][i] = src[iter - i - line_len[liter]];
+        if (src[iter] == 0xa && 
+            (strcmp("Len", &src[iter + 1]) ||
+             strcmp("Msg", &src[iter + 1]) ||
+             strcmp("MD", &src[iter + 1]))) {
+
+            if (strcmp("Len", &src[iter + 1]) || strcmp("Msg", &src[iter+1])) {
+                back = 3;
+            } else {
+                back = 2;
             }
-            test_vectors[liter][line_len[liter]] = 0x00;
+
+            for (int i=0; i < line_len[liter] + 1 - back - 4; i++) {
+                test_vectors[liter][i] = src[iter + i + back+4];
+            }
+            test_vectors[liter][line_len[liter] + 1 - back - 4] = 0x00;
+            printf("LINE :: %s\n", test_vectors[liter]);
             liter++;
         }
         iter++;
@@ -270,7 +314,9 @@ int main(int argc, char *argv[]) {
     unsigned char *t1605;
     unsigned char *tabc;
 
-    unsigned char **x = get_vec_from_file(".\\test_vectors\\SHA3_256ShortMsg.rsp");
+    test_vector *x = get_vec_from_file(".\\test_vectors\\SHA3_256ShortMsg.rsp");
+    free(x);
+    return 0;
 
     t0 = sha3_256(test_vec_0, 0); 
     printf("\n0 Hex: 0x");

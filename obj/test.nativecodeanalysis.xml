@@ -4,220 +4,14 @@
     <SFA>
       <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
       <FILENAME>test.c</FILENAME>
-      <LINE>232</LINE>
-      <COLUMN>24</COLUMN>
-    </SFA>
-    <DEFECTCODE>6011</DEFECTCODE>
-    <DESCRIPTION>Dereferencing NULL pointer 'test_vectors'. </DESCRIPTION>
-    <FUNCTION>get_vec_from_file</FUNCTION>
-    <DECORATED>get_vec_from_file</DECORATED>
-    <FUNCLINE>160</FUNCLINE>
-    <PROBABILITY>1</PROBABILITY>
-    <RANK>4</RANK>
-    <CATEGORY>
-      <RULECATEGORY>mspft</RULECATEGORY>
-    </CATEGORY>
-    <PATH>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>161</LINE>
-        <COLUMN>10</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>162</LINE>
-        <COLUMN>19</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>163</LINE>
-        <COLUMN>20</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>164</LINE>
-        <COLUMN>8</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>165</LINE>
-        <COLUMN>8</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>167</LINE>
-        <COLUMN>11</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>172</LINE>
-        <COLUMN>32</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>199</LINE>
-        <COLUMN>10</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>201</LINE>
-        <COLUMN>21</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>202</LINE>
-        <COLUMN>22</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>203</LINE>
-        <COLUMN>16</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>205</LINE>
-        <COLUMN>12</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>201</LINE>
-        <COLUMN>21</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>208</LINE>
-        <COLUMN>9</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>210</LINE>
-        <COLUMN>8</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>211</LINE>
-        <COLUMN>8</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>212</LINE>
-        <COLUMN>8</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>213</LINE>
-        <COLUMN>24</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>214</LINE>
-        <COLUMN>30</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>226</LINE>
-        <COLUMN>12</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>213</LINE>
-        <COLUMN>24</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>214</LINE>
-        <COLUMN>30</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>226</LINE>
-        <COLUMN>12</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>213</LINE>
-        <COLUMN>24</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>229</LINE>
-        <COLUMN>20</COLUMN>
-        <KEYEVENT>
-          <ID>1</ID>
-          <KIND>declaration</KIND>
-          <IMPORTANCE>Essential</IMPORTANCE>
-          <MESSAGE>'test_vectors' may be NULL</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>231</LINE>
-        <COLUMN>13</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>231</LINE>
-        <COLUMN>20</COLUMN>
-        <KEYEVENT>
-          <ID>2</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Enter this loop, (assume 'i&lt;lcnt')</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>232</LINE>
-        <COLUMN>24</COLUMN>
-        <KEYEVENT>
-          <ID>3</ID>
-          <KIND>usage</KIND>
-          <IMPORTANCE>Essential</IMPORTANCE>
-          <MESSAGE>'test_vectors' is dereferenced, but may still be NULL</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-    </PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-      <FILENAME>test.c</FILENAME>
-      <LINE>201</LINE>
+      <LINE>207</LINE>
       <COLUMN>21</COLUMN>
     </SFA>
     <DEFECTCODE>6001</DEFECTCODE>
     <DESCRIPTION>Using uninitialized memory 'src'.</DESCRIPTION>
     <FUNCTION>get_vec_from_file</FUNCTION>
     <DECORATED>get_vec_from_file</DECORATED>
-    <FUNCLINE>160</FUNCLINE>
+    <FUNCLINE>166</FUNCLINE>
     <PROBABILITY>1</PROBABILITY>
     <RANK>3</RANK>
     <CATEGORY>
@@ -227,13 +21,13 @@
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>161</LINE>
+        <LINE>167</LINE>
         <COLUMN>10</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>162</LINE>
+        <LINE>168</LINE>
         <COLUMN>19</COLUMN>
         <KEYEVENT>
           <ID>1</ID>
@@ -245,25 +39,25 @@
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>163</LINE>
+        <LINE>169</LINE>
         <COLUMN>20</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>164</LINE>
+        <LINE>170</LINE>
         <COLUMN>8</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>165</LINE>
+        <LINE>171</LINE>
         <COLUMN>8</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>167</LINE>
+        <LINE>173</LINE>
         <COLUMN>11</COLUMN>
         <KEYEVENT>
           <ID>2</ID>
@@ -275,7 +69,7 @@
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>172</LINE>
+        <LINE>178</LINE>
         <COLUMN>32</COLUMN>
         <KEYEVENT>
           <ID>3</ID>
@@ -287,13 +81,13 @@
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>199</LINE>
+        <LINE>205</LINE>
         <COLUMN>10</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>201</LINE>
+        <LINE>207</LINE>
         <COLUMN>21</COLUMN>
         <KEYEVENT>
           <ID>4</ID>
@@ -308,926 +102,14 @@
     <SFA>
       <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
       <FILENAME>test.c</FILENAME>
-      <LINE>246</LINE>
-      <COLUMN>49</COLUMN>
-    </SFA>
-    <DEFECTCODE>6386</DEFECTCODE>
-    <DESCRIPTION>Buffer overrun while writing to 'test_vectors[liter]':  the writable size is 'line_len[i]+1' bytes, but 'line_len[liter]' bytes might be written.</DESCRIPTION>
-    <FUNCTION>get_vec_from_file</FUNCTION>
-    <DECORATED>get_vec_from_file</DECORATED>
-    <FUNCLINE>160</FUNCLINE>
-    <PROBABILITY>1</PROBABILITY>
-    <RANK>4</RANK>
-    <CATEGORY>
-      <RULECATEGORY>mspft</RULECATEGORY>
-    </CATEGORY>
-    <PATH>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>161</LINE>
-        <COLUMN>10</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>162</LINE>
-        <COLUMN>19</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>163</LINE>
-        <COLUMN>20</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>164</LINE>
-        <COLUMN>8</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>165</LINE>
-        <COLUMN>8</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>167</LINE>
-        <COLUMN>11</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>172</LINE>
-        <COLUMN>32</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>199</LINE>
-        <COLUMN>10</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>201</LINE>
-        <COLUMN>21</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>202</LINE>
-        <COLUMN>22</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>203</LINE>
-        <COLUMN>16</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>205</LINE>
-        <COLUMN>12</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>201</LINE>
-        <COLUMN>21</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>208</LINE>
-        <COLUMN>9</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>210</LINE>
-        <COLUMN>8</COLUMN>
-        <KEYEVENT>
-          <ID>1</ID>
-          <KIND>declaration</KIND>
-          <IMPORTANCE>Essential</IMPORTANCE>
-          <MESSAGE>'liter' is NULL</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>211</LINE>
-        <COLUMN>8</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>212</LINE>
-        <COLUMN>8</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>213</LINE>
-        <COLUMN>24</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>214</LINE>
-        <COLUMN>30</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>226</LINE>
-        <COLUMN>12</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>213</LINE>
-        <COLUMN>24</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>214</LINE>
-        <COLUMN>30</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>226</LINE>
-        <COLUMN>12</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>213</LINE>
-        <COLUMN>24</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>229</LINE>
-        <COLUMN>20</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>231</LINE>
-        <COLUMN>13</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>231</LINE>
-        <COLUMN>20</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>232</LINE>
-        <COLUMN>24</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>231</LINE>
-        <COLUMN>29</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>231</LINE>
-        <COLUMN>20</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>235</LINE>
-        <COLUMN>10</COLUMN>
-        <KEYEVENT>
-          <ID>2</ID>
-          <KIND>declaration</KIND>
-          <IMPORTANCE>Essential</IMPORTANCE>
-          <MESSAGE>'liter' is NULL</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>236</LINE>
-        <COLUMN>9</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>237</LINE>
-        <COLUMN>8</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>238</LINE>
-        <COLUMN>24</COLUMN>
-        <KEYEVENT>
-          <ID>3</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Enter this loop, (assume 'iter&lt;=ccnt&amp;&amp;liter&lt;=lcnt')</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>239</LINE>
-        <COLUMN>30</COLUMN>
-        <KEYEVENT>
-          <ID>4</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Enter this branch, (assume '&lt;branch condition&gt;')</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>243</LINE>
-        <COLUMN>21</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>243</LINE>
-        <COLUMN>28</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>244</LINE>
-        <COLUMN>39</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>243</LINE>
-        <COLUMN>48</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>243</LINE>
-        <COLUMN>28</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>246</LINE>
-        <COLUMN>49</COLUMN>
-        <KEYEVENT>
-          <ID>5</ID>
-          <KIND>usage</KIND>
-          <IMPORTANCE>Essential</IMPORTANCE>
-          <MESSAGE>Invalid write to 'test_vectors[liter]', (outside its writable range)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-    </PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-      <FILENAME>test.c</FILENAME>
-      <LINE>246</LINE>
-      <COLUMN>49</COLUMN>
-    </SFA>
-    <DEFECTCODE>6385</DEFECTCODE>
-    <DESCRIPTION>Reading invalid data from 'line_len':  the readable size is '_Param_(1)*_Param_(2)' bytes, but '8' bytes may be read.</DESCRIPTION>
-    <FUNCTION>get_vec_from_file</FUNCTION>
-    <DECORATED>get_vec_from_file</DECORATED>
-    <FUNCLINE>160</FUNCLINE>
-    <PROBABILITY>1</PROBABILITY>
-    <RANK>4</RANK>
-    <CATEGORY>
-      <RULECATEGORY>mspft</RULECATEGORY>
-    </CATEGORY>
-    <PATH>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>161</LINE>
-        <COLUMN>10</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>162</LINE>
-        <COLUMN>19</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>163</LINE>
-        <COLUMN>20</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>164</LINE>
-        <COLUMN>8</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>165</LINE>
-        <COLUMN>8</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>167</LINE>
-        <COLUMN>11</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>172</LINE>
-        <COLUMN>32</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>199</LINE>
-        <COLUMN>10</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>201</LINE>
-        <COLUMN>21</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>202</LINE>
-        <COLUMN>22</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>203</LINE>
-        <COLUMN>16</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>205</LINE>
-        <COLUMN>12</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>201</LINE>
-        <COLUMN>21</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>208</LINE>
-        <COLUMN>9</COLUMN>
-        <KEYEVENT>
-          <ID>1</ID>
-          <KIND>declaration</KIND>
-          <IMPORTANCE>Essential</IMPORTANCE>
-          <MESSAGE>'line_len' is an array of 1 elements (4 bytes)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>210</LINE>
-        <COLUMN>8</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>211</LINE>
-        <COLUMN>8</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>212</LINE>
-        <COLUMN>8</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>213</LINE>
-        <COLUMN>24</COLUMN>
-        <KEYEVENT>
-          <ID>2</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Enter this loop, (assume 'iter&lt;=ccnt&amp;&amp;liter&lt;=lcnt')</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>214</LINE>
-        <COLUMN>30</COLUMN>
-        <KEYEVENT>
-          <ID>3</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Skip this branch, (assume '&lt;branch condition&gt;' is false)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>226</LINE>
-        <COLUMN>12</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>213</LINE>
-        <COLUMN>24</COLUMN>
-        <KEYEVENT>
-          <ID>4</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Continue this loop, (assume 'iter&lt;=ccnt&amp;&amp;liter&lt;=lcnt')</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>214</LINE>
-        <COLUMN>30</COLUMN>
-        <KEYEVENT>
-          <ID>5</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Skip this branch, (assume '&lt;branch condition&gt;' is false)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>226</LINE>
-        <COLUMN>12</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>213</LINE>
-        <COLUMN>24</COLUMN>
-        <KEYEVENT>
-          <ID>6</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Exit this loop, ('iter&lt;=ccnt&amp;&amp;liter&lt;=lcnt' is false)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>229</LINE>
-        <COLUMN>20</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>231</LINE>
-        <COLUMN>13</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>231</LINE>
-        <COLUMN>20</COLUMN>
-        <KEYEVENT>
-          <ID>7</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Enter this loop, (assume 'i&lt;lcnt')</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>232</LINE>
-        <COLUMN>24</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>231</LINE>
-        <COLUMN>29</COLUMN>
-        <KEYEVENT>
-          <ID>8</ID>
-          <KIND>declaration</KIND>
-          <IMPORTANCE>Essential</IMPORTANCE>
-          <MESSAGE>'i' may equal 1</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>231</LINE>
-        <COLUMN>20</COLUMN>
-        <KEYEVENT>
-          <ID>9</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Exit this loop, ('i&lt;lcnt' is false)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>235</LINE>
-        <COLUMN>10</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>236</LINE>
-        <COLUMN>9</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>237</LINE>
-        <COLUMN>8</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>238</LINE>
-        <COLUMN>24</COLUMN>
-        <KEYEVENT>
-          <ID>10</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Enter this loop, (assume 'iter&lt;=ccnt&amp;&amp;liter&lt;=lcnt')</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>239</LINE>
-        <COLUMN>30</COLUMN>
-        <KEYEVENT>
-          <ID>11</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Enter this branch, (assume '&lt;branch condition&gt;')</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>243</LINE>
-        <COLUMN>21</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>243</LINE>
-        <COLUMN>28</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>244</LINE>
-        <COLUMN>39</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>243</LINE>
-        <COLUMN>48</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>243</LINE>
-        <COLUMN>28</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>246</LINE>
-        <COLUMN>49</COLUMN>
-        <KEYEVENT>
-          <ID>12</ID>
-          <KIND>usage</KIND>
-          <IMPORTANCE>Essential</IMPORTANCE>
-          <MESSAGE>Invalid read from 'line_len[1]', (readable range is 0 to 0)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-    </PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-      <FILENAME>test.c</FILENAME>
-      <LINE>246</LINE>
-      <COLUMN>49</COLUMN>
-    </SFA>
-    <DEFECTCODE>6011</DEFECTCODE>
-    <DESCRIPTION>Dereferencing NULL pointer 'test_vectors[liter]'. </DESCRIPTION>
-    <FUNCTION>get_vec_from_file</FUNCTION>
-    <DECORATED>get_vec_from_file</DECORATED>
-    <FUNCLINE>160</FUNCLINE>
-    <PROBABILITY>1</PROBABILITY>
-    <RANK>4</RANK>
-    <CATEGORY>
-      <RULECATEGORY>mspft</RULECATEGORY>
-    </CATEGORY>
-    <PATH>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>161</LINE>
-        <COLUMN>10</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>162</LINE>
-        <COLUMN>19</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>163</LINE>
-        <COLUMN>20</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>164</LINE>
-        <COLUMN>8</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>165</LINE>
-        <COLUMN>8</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>167</LINE>
-        <COLUMN>11</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>172</LINE>
-        <COLUMN>32</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>199</LINE>
-        <COLUMN>10</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>201</LINE>
-        <COLUMN>21</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>202</LINE>
-        <COLUMN>22</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>203</LINE>
-        <COLUMN>16</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>205</LINE>
-        <COLUMN>12</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>201</LINE>
-        <COLUMN>21</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>208</LINE>
-        <COLUMN>9</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>210</LINE>
-        <COLUMN>8</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>211</LINE>
-        <COLUMN>8</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>212</LINE>
-        <COLUMN>8</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>213</LINE>
-        <COLUMN>24</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>214</LINE>
-        <COLUMN>30</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>226</LINE>
-        <COLUMN>12</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>213</LINE>
-        <COLUMN>24</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>214</LINE>
-        <COLUMN>30</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>226</LINE>
-        <COLUMN>12</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>213</LINE>
-        <COLUMN>24</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>229</LINE>
-        <COLUMN>20</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>231</LINE>
-        <COLUMN>13</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>231</LINE>
-        <COLUMN>20</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>232</LINE>
-        <COLUMN>24</COLUMN>
-        <KEYEVENT>
-          <ID>1</ID>
-          <KIND>declaration</KIND>
-          <IMPORTANCE>Essential</IMPORTANCE>
-          <MESSAGE>'test_vectors[liter]' may be NULL</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>231</LINE>
-        <COLUMN>29</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>231</LINE>
-        <COLUMN>20</COLUMN>
-        <KEYEVENT>
-          <ID>2</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Exit this loop, ('i&lt;lcnt' is false)</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>235</LINE>
-        <COLUMN>10</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>236</LINE>
-        <COLUMN>9</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>237</LINE>
-        <COLUMN>8</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>238</LINE>
-        <COLUMN>24</COLUMN>
-        <KEYEVENT>
-          <ID>3</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Enter this loop, (assume 'iter&lt;=ccnt&amp;&amp;liter&lt;=lcnt')</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>239</LINE>
-        <COLUMN>30</COLUMN>
-        <KEYEVENT>
-          <ID>4</ID>
-          <KIND>branch</KIND>
-          <IMPORTANCE>Full</IMPORTANCE>
-          <MESSAGE>Enter this branch, (assume '&lt;branch condition&gt;')</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>243</LINE>
-        <COLUMN>21</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>243</LINE>
-        <COLUMN>28</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>246</LINE>
-        <COLUMN>49</COLUMN>
-        <KEYEVENT>
-          <ID>5</ID>
-          <KIND>usage</KIND>
-          <IMPORTANCE>Essential</IMPORTANCE>
-          <MESSAGE>'test_vectors[liter]' is dereferenced, but may still be NULL</MESSAGE>
-        </KEYEVENT>
-      </SFA>
-    </PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-      <FILENAME>test.c</FILENAME>
-      <LINE>254</LINE>
+      <LINE>280</LINE>
       <COLUMN>14</COLUMN>
     </SFA>
     <DEFECTCODE>6385</DEFECTCODE>
     <DESCRIPTION>Reading invalid data from 'test_vectors':  the readable size is 'lcnt' bytes, but '16' bytes may be read.</DESCRIPTION>
     <FUNCTION>get_vec_from_file</FUNCTION>
     <DECORATED>get_vec_from_file</DECORATED>
-    <FUNCLINE>160</FUNCLINE>
+    <FUNCLINE>166</FUNCLINE>
     <PROBABILITY>1</PROBABILITY>
     <RANK>4</RANK>
     <CATEGORY>
@@ -1237,190 +119,226 @@
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>161</LINE>
+        <LINE>167</LINE>
         <COLUMN>10</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>162</LINE>
+        <LINE>168</LINE>
         <COLUMN>19</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>163</LINE>
+        <LINE>169</LINE>
         <COLUMN>20</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>164</LINE>
+        <LINE>170</LINE>
         <COLUMN>8</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>165</LINE>
+        <LINE>171</LINE>
         <COLUMN>8</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>167</LINE>
+        <LINE>173</LINE>
         <COLUMN>11</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>172</LINE>
+        <LINE>178</LINE>
         <COLUMN>32</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>199</LINE>
+        <LINE>205</LINE>
         <COLUMN>10</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>201</LINE>
-        <COLUMN>21</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>202</LINE>
-        <COLUMN>22</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>205</LINE>
-        <COLUMN>12</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>201</LINE>
+        <LINE>207</LINE>
         <COLUMN>21</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
         <LINE>208</LINE>
-        <COLUMN>9</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>210</LINE>
-        <COLUMN>8</COLUMN>
+        <COLUMN>22</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
         <LINE>211</LINE>
-        <COLUMN>8</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>212</LINE>
-        <COLUMN>8</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>213</LINE>
-        <COLUMN>24</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>214</LINE>
-        <COLUMN>30</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>226</LINE>
         <COLUMN>12</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>213</LINE>
-        <COLUMN>24</COLUMN>
+        <LINE>207</LINE>
+        <COLUMN>21</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
         <LINE>214</LINE>
-        <COLUMN>30</COLUMN>
+        <COLUMN>9</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
+        <FILENAME>test.c</FILENAME>
+        <LINE>216</LINE>
+        <COLUMN>17</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
+        <FILENAME>test.c</FILENAME>
+        <LINE>221</LINE>
+        <COLUMN>13</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
+        <FILENAME>test.c</FILENAME>
+        <LINE>221</LINE>
+        <COLUMN>20</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
+        <FILENAME>test.c</FILENAME>
+        <LINE>225</LINE>
+        <COLUMN>8</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
         <LINE>226</LINE>
-        <COLUMN>12</COLUMN>
+        <COLUMN>8</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>213</LINE>
+        <LINE>227</LINE>
+        <COLUMN>8</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
+        <FILENAME>test.c</FILENAME>
+        <LINE>228</LINE>
         <COLUMN>24</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
         <LINE>229</LINE>
+        <COLUMN>30</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
+        <FILENAME>test.c</FILENAME>
+        <LINE>241</LINE>
+        <COLUMN>12</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
+        <FILENAME>test.c</FILENAME>
+        <LINE>228</LINE>
+        <COLUMN>24</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
+        <FILENAME>test.c</FILENAME>
+        <LINE>229</LINE>
+        <COLUMN>30</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
+        <FILENAME>test.c</FILENAME>
+        <LINE>241</LINE>
+        <COLUMN>12</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
+        <FILENAME>test.c</FILENAME>
+        <LINE>228</LINE>
+        <COLUMN>24</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
+        <FILENAME>test.c</FILENAME>
+        <LINE>244</LINE>
         <COLUMN>20</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
+        <FILENAME>test.c</FILENAME>
+        <LINE>246</LINE>
+        <COLUMN>21</COLUMN>
         <KEYEVENT>
           <ID>1</ID>
-          <KIND>declaration</KIND>
-          <IMPORTANCE>Essential</IMPORTANCE>
-          <MESSAGE>'test_vectors' is a 0 byte array</MESSAGE>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>'test_vectors' may be NULL (Skip this branch)</MESSAGE>
         </KEYEVENT>
       </SFA>
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>231</LINE>
+        <LINE>251</LINE>
         <COLUMN>13</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>231</LINE>
+        <LINE>251</LINE>
         <COLUMN>20</COLUMN>
+        <KEYEVENT>
+          <ID>2</ID>
+          <KIND>branch</KIND>
+          <IMPORTANCE>Full</IMPORTANCE>
+          <MESSAGE>Skip this loop, (assume 'i&lt;lcnt' is false)</MESSAGE>
+        </KEYEVENT>
       </SFA>
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>235</LINE>
-        <COLUMN>10</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>236</LINE>
-        <COLUMN>9</COLUMN>
-      </SFA>
-      <SFA>
-        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
-        <FILENAME>test.c</FILENAME>
-        <LINE>237</LINE>
+        <LINE>259</LINE>
         <COLUMN>8</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>238</LINE>
+        <LINE>260</LINE>
+        <COLUMN>10</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
+        <FILENAME>test.c</FILENAME>
+        <LINE>261</LINE>
+        <COLUMN>9</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
+        <FILENAME>test.c</FILENAME>
+        <LINE>262</LINE>
+        <COLUMN>8</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
+        <FILENAME>test.c</FILENAME>
+        <LINE>263</LINE>
         <COLUMN>24</COLUMN>
         <KEYEVENT>
-          <ID>2</ID>
+          <ID>3</ID>
           <KIND>branch</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
           <MESSAGE>Enter this loop, (assume 'iter&lt;=ccnt&amp;&amp;liter&lt;=lcnt')</MESSAGE>
@@ -1429,10 +347,10 @@
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>239</LINE>
+        <LINE>264</LINE>
         <COLUMN>30</COLUMN>
         <KEYEVENT>
-          <ID>3</ID>
+          <ID>4</ID>
           <KIND>branch</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
           <MESSAGE>Enter this branch, (assume '&lt;branch condition&gt;')</MESSAGE>
@@ -1441,28 +359,34 @@
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>243</LINE>
+        <LINE>268</LINE>
         <COLUMN>21</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>243</LINE>
+        <LINE>268</LINE>
         <COLUMN>28</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>246</LINE>
+        <LINE>271</LINE>
         <COLUMN>49</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>247</LINE>
+        <LINE>272</LINE>
+        <COLUMN>18</COLUMN>
+      </SFA>
+      <SFA>
+        <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
+        <FILENAME>test.c</FILENAME>
+        <LINE>273</LINE>
         <COLUMN>17</COLUMN>
         <KEYEVENT>
-          <ID>4</ID>
+          <ID>5</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Essential</IMPORTANCE>
           <MESSAGE>'liter' may equal 1</MESSAGE>
@@ -1471,16 +395,16 @@
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>249</LINE>
+        <LINE>275</LINE>
         <COLUMN>12</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>238</LINE>
+        <LINE>263</LINE>
         <COLUMN>24</COLUMN>
         <KEYEVENT>
-          <ID>5</ID>
+          <ID>6</ID>
           <KIND>branch</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
           <MESSAGE>Exit this loop, ('iter&lt;=ccnt&amp;&amp;liter&lt;=lcnt' is false)</MESSAGE>
@@ -1489,22 +413,22 @@
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>251</LINE>
+        <LINE>277</LINE>
         <COLUMN>8</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>253</LINE>
+        <LINE>279</LINE>
         <COLUMN>13</COLUMN>
       </SFA>
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>253</LINE>
+        <LINE>279</LINE>
         <COLUMN>20</COLUMN>
         <KEYEVENT>
-          <ID>6</ID>
+          <ID>7</ID>
           <KIND>branch</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
           <MESSAGE>Enter this loop, (assume 'i&lt;liter')</MESSAGE>
@@ -1513,10 +437,10 @@
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>254</LINE>
+        <LINE>280</LINE>
         <COLUMN>14</COLUMN>
         <KEYEVENT>
-          <ID>7</ID>
+          <ID>8</ID>
           <KIND>declaration</KIND>
           <IMPORTANCE>Full</IMPORTANCE>
           <MESSAGE>'liter' is an Output from 'printf' (declared at c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h:944)</MESSAGE>
@@ -1525,10 +449,10 @@
       <SFA>
         <FILEPATH>c:\users\sjr.john.andersen\.scripts\languages\c\sha3\src\</FILEPATH>
         <FILENAME>test.c</FILENAME>
-        <LINE>254</LINE>
+        <LINE>280</LINE>
         <COLUMN>14</COLUMN>
         <KEYEVENT>
-          <ID>8</ID>
+          <ID>9</ID>
           <KIND>usage</KIND>
           <IMPORTANCE>Essential</IMPORTANCE>
           <MESSAGE>Invalid read from 'test_vectors', (outside its readable range)</MESSAGE>
