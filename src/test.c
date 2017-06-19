@@ -139,12 +139,12 @@ static int sha3_256_run_test(unsigned char *vector, int len, unsigned char *ans)
     puts("");
     for (int i=31; i>=0; i--) {printf("%02x", ans[i]);}
     puts("");
-    int response = hex_check(t, ans, 32);
+    int response = hex_check((char *) t, (char *) ans, 32);
     free(t);
     return response;
 }
 
-static unsigned int strlen(const unsigned char *x) {
+static unsigned int slen(const unsigned char *x) {
     unsigned int i = 0;
     while (x[i] != 0x00) {
         i++;
@@ -153,7 +153,7 @@ static unsigned int strlen(const unsigned char *x) {
 }
 
 static int strcmp(const unsigned char *x, const unsigned char *y) {
-    unsigned int length = strlen(x) - 1;
+    unsigned int length = slen(x) - 1;
 
     int i = 0;
     while (i < length) {
@@ -325,7 +325,7 @@ int main(int argc, char *argv[]) {
     printf("0 Ans: 0x");
     for (int i=31;i>=0;i--) {printf("%02x", test_vec_0_ret[i]);}
     printf("\n");
-    hex_check(t0, test_vec_0_ret, 32);
+    hex_check((char *) t0, (char *) test_vec_0_ret, 32);
     free(t0);
 
     tabc = sha3_256(test_vec_abc, 0); 
@@ -335,7 +335,7 @@ int main(int argc, char *argv[]) {
     printf("0 Ans: 0x");
     for (int i=31;i>=0;i--) {printf("%02x", test_vec_0_ret[i]);}
     printf("\n");
-    hex_check(tabc, test_vec_abc_ret, 32);
+    hex_check((char *) tabc, (char *) test_vec_abc_ret, 32);
     free(tabc);
 
     t5 = sha3_256(test_vec_5, 5); 
@@ -345,7 +345,7 @@ int main(int argc, char *argv[]) {
     printf("5 Ans: 0x");
     for (int i=31;i>=0;i--) {printf("%02x", test_vec_5_ret[i]);}
     printf("\n");
-    hex_check(t5, test_vec_5_ret, 32);
+    hex_check((char *) t5, (char *) test_vec_5_ret, 32);
     free(t5);
 
     t30 = sha3_256(test_vec_30, 30); 
@@ -355,7 +355,7 @@ int main(int argc, char *argv[]) {
     printf("30 Ans: 0x");
     for (int i=31;i>=0;i--) {printf("%02x", test_vec_30_ret[i]);}
     printf("\n");
-    hex_check(t30, test_vec_30_ret, 32);
+    hex_check((char *) t30, (char *) test_vec_30_ret, 32);
     free(t30);
 
     t1600 = sha3_256(test_vec_1600, 1600); 
@@ -365,7 +365,7 @@ int main(int argc, char *argv[]) {
     printf("1600 Ans: 0x");
     for (int i=31;i>=0;i--) {printf("%02x", test_vec_1600_ret[i]);}
     printf("\n");
-    hex_check(t1600, test_vec_1600_ret, 32);
+    hex_check((char *) t1600, (char *) test_vec_1600_ret, 32);
     free(t1600);
 
     t1605 = sha3_256(test_vec_1605, 1605); 
@@ -375,7 +375,7 @@ int main(int argc, char *argv[]) {
     printf("1605 Ans: 0x");
     for (int i=31;i>=0;i--) {printf("%02x", test_vec_1605_ret[i]);}
     printf("\n");
-    hex_check(t1605, test_vec_0_ret, 32);
+    hex_check((char *) t1605, (char *) test_vec_0_ret, 32);
     free(t1605);
 
     return 0;

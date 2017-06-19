@@ -14,8 +14,10 @@ A rough SHA-3 256 and 512 bit implementation for both practice and understanding
 On Windows platforms, you can compile with the MSVC toolchain. I usually use `cl` for things, as I have a dislike for how cumbersome Visual Studio is. Make sure the `vcvarsall.bat` has been run to set up the proper environment variables for `nmake`, otherwise nothing will work. Navigate to the root (`'.'` not `/`) directory and run:
 
 ```
-nmake Makefile.win
+nmake /f Makefile.win
 ```
+
+Note: you may have to force build if you are trying to build multiple times. In this case you should use the `/A` parameter.
 
 #### Debugging
 

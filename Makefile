@@ -5,16 +5,17 @@ INC=-I$(CLIBS)
 SRC=test.c
 
 CC=gcc
-CFLAGS=-Wall -O3
+CFLAGS=-Wfatal-errors
 
-_DEPS=$(_SRC)$(SRC) $(CLIBS)utils.c $(CLIBS)sha3.c
+_DEPS=$(CLIBS)utils.c $(CLIBS)utils.h $(CLIBS)sha3.c $(CLIBS)sha3.h $(_SRC)$(SRC) 
 
-_OBJ=$(ODIR)$(SRC) $(ODIR)utils.c $(ODIR)sha3.c
-OBJ=$(_OBJ:.c=.obj)
+_OBJ=$(ODIR)utils.c $(ODIR)sha3.c $(ODIR)$(SRC) 
+OBJ=$(patsubst %.c,%.o,$(_OBJ))
 
 sha3_tests: $(OBJ)
-	$(CC) $** $(CFLAGS)
+	$(CC) -o $@ $^ $(CFLAGS) $(INC)*
 
-$(OBJ)%.obj: $(_DEPS) 
-	$(CC) -c -o sha3_tests $(ODIR) $** $(CFLAGS) $(INC)
+$(OBJ): $(_DEPS) 
+	$(CC) -o $@ -c $< $(CFLAGS) $(INC)*
+
 
