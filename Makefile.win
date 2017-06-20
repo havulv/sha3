@@ -7,7 +7,7 @@ SRC=test.c
 CC=cl
 # Debug flags: /Zi /MT /EHsc /Oy- /Ob0
 # Normal compile flags: -W2 -O1
-CFLAGS=/Zi /MT /EHsc /Oy- /Ob0
+CFLAGS=/Zi /MT /EHsc /Oy- /Ob0 /analyze
 
 _DEPS=$(_SRC)$(SRC) $(CLIBS)utils.c $(CLIBS)sha3.c
 

@@ -20,116 +20,73 @@ typedef struct test_vector {
     unsigned char *md;
 } test_vector;
 
-static unsigned char test_vec_0[] = {0x00};
-
-static unsigned char test_vec_0_ret[] = { 0xA7, 0xFF, 0xC6, 0xF8, 0xBF, 0x1E, 0xD7, 
-                                 0x66, 0x51, 0xC1, 0x47, 0x56, 0xA0, 0x61, 
-                                 0xD6, 0x62, 0xF5, 0x80, 0xFF, 0x4D, 0xE4, 
-                                 0x3B, 0x49, 0xFA, 0x82, 0xD8, 0x0A, 0x4B, 
-                                 0x80, 0xF8, 0x43, 0x4A};
-
-/* 1 byte */
-static unsigned char test_vec_5[] = { 0x19};
-
-static unsigned char test_vec_5_ret[] = { 0x7B, 0x00, 0x47, 0xCF, 0x5A, 0x45, 0x68,
-                                 0x82, 0x36, 0x3C, 0xBF, 0x0F, 0xB0, 0x53,
-                                 0x22, 0xCF, 0x65, 0xF4, 0xB7, 0x05, 0x9A,
-                                 0x46, 0x36, 0x5E, 0x83, 0x01, 0x32, 0xE3,
-                                 0xB5, 0xD9, 0x57, 0xAF};
-
-/* abc */
-static unsigned char test_vec_abc[] = {0x61, 0x62, 0x63};
-
-static unsigned char test_vec_abc_ret[] = {0x3a, 0x98, 0x5d, 0xa7, 0x4f, 0xe2, 0x25,
-                                0xb2, 0x04, 0x5c, 0x17, 0x2d, 0x6b, 0xd3,
-                                0x90, 0xbd, 0x85, 0x5f, 0x08, 0x6e, 0x3e,
-                                0x9d, 0x52, 0x5b, 0x46, 0xbf, 0xe2, 0x45,
-                                0x11, 0x43, 0x15, 0x32};
-
-/* 4 bytes */
-static unsigned char test_vec_30[] = { 0xa6, 0xb7, 0x86, 0x1a};
-
-static unsigned char test_vec_30_ret[] = { 0xC8, 0x24, 0x2F, 0xEF, 0x40, 0x9E, 0x5A, 
-                                  0xE9, 0xD1, 0xF1, 0xC8, 0x57, 0xAE, 0x4D, 
-                                  0xC6, 0x24, 0xB9, 0x2B, 0x19, 0x80, 0x9F, 
-                                  0x62, 0xAA, 0x8C, 0x07, 0x41, 0x1C, 0x54, 
-                                  0xA0, 0x78, 0xB1, 0xD0};
-
-/* 200 bytes */
-static unsigned char test_vec_1600[] = { 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 
-                                0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 
-                                0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 
-                                0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 
-                                0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 
-                                0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 
-                                0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 
-                                0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 
-                                0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 
-                                0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 
-                                0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 
-                                0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 
-                                0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 
-                                0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 
-                                0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 
-                                0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 
-                                0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 
-                                0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 
-                                0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 
-                                0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 
-                                0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 
-                                0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 
-                                0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 
-                                0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 
-                                0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5, 0xc5 };
-
-static unsigned char test_vec_1600_ret[] = { 0x79, 0xF3, 0x8A, 0xDE, 0xC5, 0xC2, 0x03,
-                                    0x07, 0xA9, 0x8E, 0xF7, 0x6E, 0x83, 0x24, 
-                                    0xAF, 0xBF, 0xD4, 0x6C, 0xFD, 0x81, 0xB2, 
-                                    0x2E, 0x39, 0x73, 0xC6, 0x5F, 0xA1, 0xBD, 
-                                    0x9D, 0xE3, 0x17, 0x87};
-
-/* 201 bytes */
-static unsigned char test_vec_1605[] = { 0x18, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 
-                                0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 
-                                0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 
-                                0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 
-                                0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 
-                                0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 
-                                0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 
-                                0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 
-                                0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 
-                                0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 
-                                0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 
-                                0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 
-                                0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 
-                                0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 
-                                0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 
-                                0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 
-                                0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 
-                                0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 
-                                0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 
-                                0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 
-                                0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 
-                                0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 
-                                0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 
-                                0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 
-                                0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8, 0xb8 };
-
-static unsigned char test_vec_1605_ret[] = { 0x81, 0xEE, 0x76, 0x9B, 0xED, 0x09, 0x50,
-                                    0x86, 0x2B, 0x1D, 0xDD, 0xED, 0x2E, 0x84,
-                                    0xAA, 0xA6, 0xAB, 0x7B, 0xFD, 0xD3, 0xCE,
-                                    0xAA, 0x47, 0x1B, 0xE3, 0x11, 0x63, 0xD4,
-                                    0x03, 0x36, 0x36, 0x3C};
+static unsigned int slen(const unsigned char *x) {
+    unsigned int i = 0;
+    while (x[i] != 0x00) {
+        i++;
+    }
+    return i;
+}
 
 static unsigned char chartoint(unsigned char byte) {
-    if ((byte > 0x2f) & (byte < 0x3a)) {
+    if ((((int) byte) > 0x2f) & (((int) byte) < 0x3a)) {
         return (unsigned char) ((int) byte - 48);
     } else if ((byte > 0x40) && (byte < 0x47)) {
         return (unsigned char) ((int) byte - 55);
-    } else if ((byte > 0x61) && (byte < 0x67)) {
+    } else if ((byte > 0x60) && (byte < 0x67)) {
         return (unsigned char) ((int) byte - 87);
     }
     return 0x00;
+}
+
+static unsigned char *strtoint(const unsigned char *bytes) {
+    int i = 0;
+    int j = 0;
+    int length = slen(bytes);
+    unsigned char *ret = malloc(sizeof(unsigned char) * ((length / 2) + (length % 2) + 1));
+
+
+    if (ret == NULL) {
+        free(ret);
+        return NULL;
+    }
+
+    while (bytes[i] != 0x00) {
+        switch (i % 2) {
+            case 0:
+                ret[j] = (chartoint(bytes[i]) << 4);
+                break;
+            case 1:
+                ret[j] |= chartoint(bytes[i]);
+                j++;
+                break;
+        }
+        i++;
+    }
+
+    return ret;
+}
+
+static int mnpow(int a, int b) {
+    int ret = 1;
+    if (b == 0) return 1;
+    while (b > 0) {
+        ret = ret * a;
+        b--;
+    }
+
+    return ret;
+}
+
+static unsigned char bytestoint(unsigned char *bytes) {
+    int i = 0;
+    int ret = 0;
+    int len = slen(bytes) - 1;
+    while (bytes[i] != 0x00) {
+        ret += (mnpow(10, len - i) * (int) chartoint(bytes[i]));
+        i++;
+    }
+    return ret;
 }
 
 static unsigned char inttochar(unsigned int x) {
@@ -140,25 +97,17 @@ static unsigned char inttochar(unsigned int x) {
     }
 }
 
-static int sha3_256_run_test(unsigned char *vector, int len, unsigned char *ans) {
+static int sha3_256_run_test(test_vector *test, unsigned char *ans) {
     unsigned char *t;
-    t = sha3_256(vector, len);
-    printf("\n%d, Hex: 0x", len);
-    for (int i=31; i>=0; i--) {printf("%02x", t[i]);}
+    t = sha3_256(test->msg, test->len);
+    printf("\n%d, Hex: 0x", test->len);
+    for (int i=31; i>=0; i--) {printf("%02x", test->md[i]);}
     puts("");
     for (int i=31; i>=0; i--) {printf("%02x", ans[i]);}
     puts("");
-    int response = hex_check((char *) t, (char *) ans, 32);
+    int response = hex_check((char *) ans, (char *) test->md, 32);
     free(t);
     return response;
-}
-
-static unsigned int slen(const unsigned char *x) {
-    unsigned int i = 0;
-    while (x[i] != 0x00) {
-        i++;
-    }
-    return i;
 }
 
 static int strcmp(const unsigned char *x, const unsigned char *y) {
@@ -175,7 +124,7 @@ static int strcmp(const unsigned char *x, const unsigned char *y) {
 static test_vector *get_vec_from_file(char *file) {
     FILE *fp = fopen(file, "r");
     unsigned char *src;
-    unsigned char **tests;
+    test_vector *tests;
     int ccnt = 0;
     int lcnt = 0;
 
@@ -210,9 +159,14 @@ static test_vector *get_vec_from_file(char *file) {
         } else {
             src[++newLen] = 0x00;
         }
+    } else {
+        fclose(fp);
+        return NULL;
     }
     fclose(fp);
 
+
+    puts("File read");
     while (src[ccnt] != 0x00 ) {
         if (src[ccnt] == 0xa &&
             (strcmp("Len", &src[ccnt + 1]) ||
@@ -223,14 +177,24 @@ static test_vector *get_vec_from_file(char *file) {
         ccnt++;
     }
 
-    int *line_len = calloc(sizeof(int), lcnt);
+    if ((lcnt % 3) != 0) {
+        printf(\
+"The line count is not divisible by 3 and thus doesn't match \
+the test vector specification. Please use the correct file.\
+The line count is %d", lcnt);
+        free(src);
+        return NULL;
+    }
+
+    puts("Lines counted");
+    int *line_len = calloc(sizeof(int), lcnt + 1);
 
     if (line_len == NULL) {
         free(line_len);
         return NULL;
     }
 
-    for (int i=0; i < lcnt; i++) {
+    for (int i=0; i <= lcnt; i++) {
         line_len[i] = 0;
     }
 
@@ -253,10 +217,9 @@ static test_vector *get_vec_from_file(char *file) {
         }
         iter++;
     }
-    printf("line count actual: %d\nline count recorded: %d\n\
-Character Count actual: %d\nCharacter count recorded: %d\n", lcnt, liter, ccnt, iter);
 
-    unsigned char **test_vectors = malloc(lcnt);
+    puts("Line lengths counted");
+    unsigned char **test_vectors = malloc( sizeof(char *) * (lcnt+2));
 
     if (test_vectors == NULL) {
         free(test_vectors);
@@ -265,7 +228,7 @@ Character Count actual: %d\nCharacter count recorded: %d\n", lcnt, liter, ccnt, 
         return NULL;
     }
 
-    for (int i=0; i < lcnt; i++) {
+    for (int i=0; i <= lcnt; i++) {
         test_vectors[i] = malloc(line_len[i] + 1);
         if (test_vectors[i] == NULL) {
             free(test_vectors[i]);
@@ -276,11 +239,13 @@ Character Count actual: %d\nCharacter count recorded: %d\n", lcnt, liter, ccnt, 
         }
     }
 
+
+    puts("Vectors accounted for");
     liter = 0;
     iter = 0;
     ind = 0;
     int back = 0;
-    while (iter <= ccnt && liter <= lcnt) {
+    while ((iter < ccnt) && (liter <= lcnt)) {
         if (src[iter] == 0xa && 
             (strcmp("Len", &src[iter + 1]) ||
              strcmp("Msg", &src[iter + 1]) ||
@@ -296,40 +261,69 @@ Character Count actual: %d\nCharacter count recorded: %d\n", lcnt, liter, ccnt, 
                 test_vectors[liter][i] = src[iter + i + back+4];
             }
             test_vectors[liter][line_len[liter] + 1 - back - 4] = 0x00;
-            printf("LINE :: %s\n", test_vectors[liter]);
             liter++;
         }
         iter++;
     }
+
+    test_vectors[liter] = NULL;
+    free(line_len);
     free(src);
 
-    for (int i=0; i < liter;i++) {
-        printf("%s", test_vectors[liter]);
-    }
-    for (int i =0; i < liter; i++ ) {
-        free(test_vectors[liter]);
-    }
-    free(test_vectors);
-    free(line_len);
+    puts("Allocating structs for test vectors");
 
-    return NULL;
+    tests = calloc(((lcnt / 3) + 1), sizeof(test_vector *));
+
+    if (tests == NULL) {
+        for (int i=0; i < lcnt; i++) {
+            free(test_vectors[i]);
+        }
+        free(test_vectors);
+        free(tests);
+        return NULL;
+    }
+
+    puts("Placing test vectors into structs");
+
+    printf("total lines = %d\n", lcnt);
+    j = 0;
+    for (int i=0; i < lcnt; i++) {
+        switch (i % 3) {
+            case 0: {
+                tests[j].len = bytestoint(test_vectors[i]);
+                } break;
+            case 1: {
+                tests[j].msg = strtoint(test_vectors[i]);
+                } break;
+            case 2: {
+                tests[j].md = strtoint(test_vectors[i]);
+                j++;
+                } break;
+        }
+    }
+
+    puts("Test Vectors allocated into structs");
+
+    for (int i=0; i <= lcnt;i++) {
+        printf("freeing 0x%p %s :: ", test_vectors[i], test_vectors[i]);
+        free(test_vectors[i]);
+        printf("%d :: %d (freed) \n", i, lcnt);
+    }
+    puts("here?");
+
+    free(test_vectors);
+
+    return tests;
 }
 
 int main(int argc, char *argv[]) {
     unsigned char *t0;
-    unsigned char *t5;
-    unsigned char *t30;
-    unsigned char *t1600;
-    unsigned char *t1605;
-    unsigned char *tabc;
 
     char *file = ".\\test_vectors\\sha3_256shortmsg.rsp";
 
     char sep_test[2] = {SEP, 0x00};
-    puts(sep_test);
     int z = 0;
     while (file[z] != 0x00) {
-        printf("Here char = %c; %#02x\n", file[z], file[z]);
         if ((file[z] == '/') || (file[z] == '\\')) {
             file[z] = SEP;
         }
@@ -341,65 +335,14 @@ int main(int argc, char *argv[]) {
     free(x);
     return 0;
 
-    t0 = sha3_256(test_vec_0, 0); 
-    printf("\n0 Hex: 0x");
-    for (int i=31;i>=0;i--) {printf("%02x", t0[i]);}
-    printf("\n");
-    printf("0 Ans: 0x");
-    for (int i=31;i>=0;i--) {printf("%02x", test_vec_0_ret[i]);}
-    printf("\n");
-    hex_check((char *) t0, (char *) test_vec_0_ret, 32);
-    free(t0);
-
-    tabc = sha3_256(test_vec_abc, 0); 
-    printf("\n0 Hex: 0x");
-    for (int i=31;i>=0;i--) {printf("%02x", tabc[i]);}
-    printf("\n");
-    printf("0 Ans: 0x");
-    for (int i=31;i>=0;i--) {printf("%02x", test_vec_0_ret[i]);}
-    printf("\n");
-    hex_check((char *) tabc, (char *) test_vec_abc_ret, 32);
-    free(tabc);
-
-    t5 = sha3_256(test_vec_5, 5); 
-    printf("\n5 Hex: 0x");
-    for (int i=31;i>=0;i--) {printf("%02x", t5[i]);}
-    printf("\n");
-    printf("5 Ans: 0x");
-    for (int i=31;i>=0;i--) {printf("%02x", test_vec_5_ret[i]);}
-    printf("\n");
-    hex_check((char *) t5, (char *) test_vec_5_ret, 32);
-    free(t5);
-
-    t30 = sha3_256(test_vec_30, 30); 
-    printf("\n30 Hex: 0x");
-    for (int i=31;i>=0;i--) {printf("%02x", t30[i]);}
-    printf("\n");
-    printf("30 Ans: 0x");
-    for (int i=31;i>=0;i--) {printf("%02x", test_vec_30_ret[i]);}
-    printf("\n");
-    hex_check((char *) t30, (char *) test_vec_30_ret, 32);
-    free(t30);
-
-    t1600 = sha3_256(test_vec_1600, 1600); 
-    printf("\n1600 Hex: 0x");
-    for (int i=31;i>=0;i--) {printf("%02x", t1600[i]);}
-    printf("\n");
-    printf("1600 Ans: 0x");
-    for (int i=31;i>=0;i--) {printf("%02x", test_vec_1600_ret[i]);}
-    printf("\n");
-    hex_check((char *) t1600, (char *) test_vec_1600_ret, 32);
-    free(t1600);
-
-    t1605 = sha3_256(test_vec_1605, 1605); 
-    printf("\n1605 Hex: 0x");
-    for (int i=31;i>=0;i--) {printf("%02x", t1605[i]);}
-    printf("\n");
-    printf("1605 Ans: 0x");
-    for (int i=31;i>=0;i--) {printf("%02x", test_vec_1605_ret[i]);}
-    printf("\n");
-    hex_check((char *) t1605, (char *) test_vec_0_ret, 32);
-    free(t1605);
-
-    return 0;
+//    t0 = sha3_256(test_vec_0, 0); 
+//    printf("\n0 Hex: 0x");
+//    for (int i=31;i>=0;i--) {printf("%02x", t0[i]);}
+//    printf("\n");
+//    printf("0 Ans: 0x");
+//    for (int i=31;i>=0;i--) {printf("%02x", test_vec_0_ret[i]);}
+//    printf("\n");
+//    hex_check((char *) t0, (char *) test_vec_0_ret, 32);
+//    free(t0);
+//    return 0;
 }
