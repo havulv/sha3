@@ -14,7 +14,7 @@ _DEPS=$(_SRC)$(SRC) $(CLIBS)utils.c $(CLIBS)sha3.c
 _OBJ=$(ODIR)$(SRC) $(ODIR)utils.c $(ODIR)sha3.c
 OBJ=$(_OBJ:.c=.obj)
 
-tests_exec.exe: $(OBJ)
+sha3_tests.exe: $(OBJ)
 	$(CC) $** $(CFLAGS)
 
 $(OBJ)%.obj: $(_DEPS) 

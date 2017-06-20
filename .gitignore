@@ -4,5 +4,6 @@
 *.obj
 *.xml
 *.o
+!./obj/
 ./obj/*
 sha3_tests
