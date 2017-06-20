@@ -5,6 +5,15 @@
 #include <stdint.h>
 #include <stdlib.h>
 
+#if (defined (_WIN32) || defined (_WIN64))
+#define SEP 0x2f
+
+#else
+#define SEP 0x5c
+
+#endif
+
+
 typedef struct test_vector {
     int len;
     unsigned char *msg;
@@ -314,7 +323,21 @@ int main(int argc, char *argv[]) {
     unsigned char *t1605;
     unsigned char *tabc;
 
-    test_vector *x = get_vec_from_file(".\\test_vectors\\SHA3_256ShortMsg.rsp");
+    char *file = ".\\test_vectors\\sha3_256shortmsg.rsp";
+
+    char sep_test[2] = {SEP, 0x00};
+    puts(sep_test);
+    int z = 0;
+    while (file[z] != 0x00) {
+        printf("Here char = %c; %#02x\n", file[z], file[z]);
+        if ((file[z] == '/') || (file[z] == '\\')) {
+            file[z] = SEP;
+        }
+        z++;
+    }
+
+
+    test_vector *x = get_vec_from_file(file);
     free(x);
     return 0;
 

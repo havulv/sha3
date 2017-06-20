@@ -1,9 +1,9 @@
 
 
+#include <stdio.h>
+
 #ifndef UTILS_H
 #define UTILS_H
-
-#include <stdio.h>
 
 /* Data dumps for char arrays.
    If the data isn't a char array then cast that sucker and make it fit */

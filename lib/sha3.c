@@ -5,6 +5,7 @@
 
 #include "sha3.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 #ifdef _MSC_VER
 #include <intrin.h>
@@ -36,7 +37,7 @@ static int mod(int a, int b) {
     return x < 0? x + b: x;
 }
 
-static int pow(int a, int b) {
+static int npow(int a, int b) {
     if (b == 0) return 1;
 
     int state = a;
@@ -48,7 +49,7 @@ static int pow(int a, int b) {
     return state;
 }
 
-static int ceil(int a, int b) {
+static int nceil(int a, int b) {
     if (a % b > 0 ) {
         return (a / b + 1);
     } else {
@@ -63,22 +64,22 @@ static int ceil(int a, int b) {
 /* w is b/25, mp must be the same size as m which is w * 25*/
 static unsigned char *theta(unsigned char *m, unsigned char *mp, int w) {
     for (int i = 0; i < (w * 25 / 8); i++) {mp[i] = 0x00;}
-    unsigned char *C = malloc(ceil(5 * w, 8));
+    unsigned char *C = malloc(nceil(5 * w, 8));
 
     if (C == NULL) {
         free(C);
         return NULL;
     }
 
-    for (int i=0; i < ceil(5 * w, 8); i++) { C[i] = 0x00;}
+    for (int i=0; i < nceil(5 * w, 8); i++) { C[i] = 0x00;}
 
-    unsigned char *D = malloc(ceil(5 * w, 8));
+    unsigned char *D = malloc(nceil(5 * w, 8));
     if (D == NULL) {
         free(D);
         return NULL;
     }
 
-    for (int i=0; i < ceil(5 * w, 8); i++) { D[i] = 0x00;}
+    for (int i=0; i < nceil(5 * w, 8); i++) { D[i] = 0x00;}
     for (int x=0; x < 5; x++) {
         for (int z=0; z < w; z++) {
             int pair = (x * w) + z;
@@ -202,9 +203,9 @@ static unsigned char rc(int t) {
         for (int i=1; i < end; i++) {
             R = R & 0x00ff;
             R |= (R ^ (R >> 8)) & 1;
-            R |= ((R >> 4) ^ (R >> 8) & 1) << 4;
-            R |= ((R >> 5) ^ (R >> 8) & 1) << 5;
-            R |= ((R >> 6) ^ (R >> 8) & 1) << 6;
+            R |= (((R >> 4) ^ (R >> 8)) & 1) << 4;
+            R |= (((R >> 5) ^ (R >> 8)) & 1) << 5;
+            R |= (((R >> 6) ^ (R >> 8)) & 1) << 6;
             R >>= 1;
         }
         unsigned char ret = 0xff & R;
@@ -226,23 +227,23 @@ static unsigned char *iota(unsigned char *m, unsigned char *mp, int w, int ir) {
         }
     }
 
-    unsigned char *RC = malloc(ceil(w, 8));
+    unsigned char *RC = malloc(nceil(w, 8));
     if (RC == NULL) {
         free(RC);
         return NULL;
     }
-    for (int i = 0; i < ceil(w, 8); i++) {
+    for (int i = 0; i < nceil(w, 8); i++) {
         RC[i] = 0x00;
     }
 
     for (int j = 0; j < l; j++) {
-        RC[(pow(2, j) - 1) / 8] |= ((rc(j + 7 * ir) 
-                                 & 1) << ((pow(2, j) - 1) % 8));
+        RC[(npow(2, j) - 1) / 8] |= ((rc(j + 7 * ir) 
+                                 & 1) << ((npow(2, j) - 1) % 8));
     }
 
     for (int z = 0; z < w; z++) {
-        mp[z / 8] |= ((mp[z / 8] >> (z % 8)) 
-                   ^ (RC[z / 8] >> (z % 8))
+        mp[z / 8] |= (((mp[z / 8] >> (z % 8)) 
+                   ^ (RC[z / 8] >> (z % 8)))
                    & 1) << (z % 8);
     }
     free(RC);
@@ -295,12 +296,12 @@ static unsigned char *keccak_f(unsigned char *m, int b) {
 static unsigned char *pad10(int x, int m) {
     int j = (-m - 2) % x;
     j = j < 0? x + j: j;
-    unsigned char *pad = malloc(ceil(j, 8));
+    unsigned char *pad = malloc(nceil(j, 8));
     if (pad == NULL) {
         free(pad);
         return NULL;
     }
-    for (int i=0; i < ceil(j, 8); i++) { pad[i] = 0x00;}
+    for (int i=0; i < nceil(j, 8); i++) { pad[i] = 0x00;}
     pad[0] = 1;
     for (int i=1; i < j - 1; i++) {
         pad[i / 8] &= ~(1 << (i % 8));
@@ -347,8 +348,8 @@ unsigned char *sha3_256(unsigned char *m, size_t msze) {
 //    int j = (-size - 2) % (1088);
 //    int adj_j = (j<0?1088+j:j);
 //    unsigned int msize = size + adj_j;
-//    unsigned char *P = malloc(ceil(msize, 8));
-//    for (int i = 0; i < ceil(msize, 8); i++) {  //Need to remember to clear new allocations
+//    unsigned char *P = malloc(nceil(msize, 8));
+//    for (int i = 0; i < nceil(msize, 8); i++) {  //Need to remember to clear new allocations
 //        P[i] = 0x00;
 //    }
 //
@@ -381,7 +382,7 @@ unsigned char *sha3_256(unsigned char *m, size_t msze) {
     }
     printf("\n");
 */
-    int n = ceil(msize, 1088);
+    int n = nceil(msize, 1088);
 
     unsigned char S[200];
     for (int ind=0; ind < 200; ind++) {
@@ -441,12 +442,12 @@ unsigned char *sha3_256(unsigned char *m, size_t msze) {
 
     int cnt = 1;
     while (256 > zsize) {
-        unsigned char *nZ = malloc(ceil(1088 * cnt, 8));
+        unsigned char *nZ = malloc(nceil(1088 * cnt, 8));
         if (nZ == NULL) {
             free(nZ);
             return NULL;
         }
-        for (int i = 0; i < ceil(1088 * cnt, 8); i++) { nZ[i] = 0x00;}
+        for (int i = 0; i < nceil(1088 * cnt, 8); i++) { nZ[i] = 0x00;}
 
         unsigned char *tmpS = keccak_f(S, 1600);
         for (int i = 0; i < 200; i++) {
@@ -465,13 +466,13 @@ unsigned char *sha3_256(unsigned char *m, size_t msze) {
         }
         zsize = 1088 * cnt;
 
-        Z = malloc(ceil(1088 * cnt, 8));
+        Z = malloc(nceil(1088 * cnt, 8));
         if (Z == NULL) {
             free(Z);
             return NULL;
         }
 
-        for (int i = 0; i < ceil(1088 * cnt, 8); i++) { Z[i] = 0x00;}
+        for (int i = 0; i < nceil(1088 * cnt, 8); i++) { Z[i] = 0x00;}
         for (int i = 0; i < (1088 * cnt) / 8; i++) {
             Z[i] = nZ[i];
         }
@@ -511,7 +512,7 @@ unsigned char *sha3_512(unsigned char *m, size_t msze) {
     int r = 1600 - 1024;
     int j = (-size - 2) % (576);
     unsigned int msize = size + (j<0?576+j:j);
-    unsigned char *P = malloc(ceil(msize, 8));
+    unsigned char *P = malloc(nceil(msize, 8));
     if (P == NULL) {
         free(P);
         return NULL;
@@ -574,7 +575,7 @@ unsigned char *sha3_512(unsigned char *m, size_t msze) {
 
     int cnt = 1;
     while (512 > zsize) {
-        unsigned char *nZ = malloc(ceil(576 * cnt, 8));
+        unsigned char *nZ = malloc(nceil(576 * cnt, 8));
         if (nZ == NULL) {
             free(nZ);
             return NULL;
@@ -597,7 +598,7 @@ unsigned char *sha3_512(unsigned char *m, size_t msze) {
         }
         zsize = 576 * cnt;
 
-        Z = malloc(ceil(576 * cnt, 8));
+        Z = malloc(nceil(576 * cnt, 8));
         if (Z == NULL) {
             free(Z);
             return NULL;

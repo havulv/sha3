@@ -3,10 +3,10 @@
  *  Vulnerable to side-channel and timing attacks
  */
 
+#include <stdio.h>
+
 #ifndef SHA_H
 #define SHA_H
-
-#include <stdio.h>
 
 unsigned char *sha3_256(unsigned char *m, size_t size);
 
