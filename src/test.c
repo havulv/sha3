@@ -6,10 +6,10 @@
 #include <stdlib.h>
 
 #if (defined (_WIN32) || defined (_WIN64))
-#define SEP 0x2f
+#define SEP 0x5c
 
 #else
-#define SEP 0x5c
+#define SEP 0x2f
 
 #endif
 
@@ -89,27 +89,6 @@ static unsigned char bytestoint(unsigned char *bytes) {
     return ret;
 }
 
-static unsigned char inttochar(unsigned int x) {
-    if ((0 <= x) & (9 > x)) {
-        return (unsigned char) (x + 48);
-    } else {
-        return 0x00;
-    }
-}
-
-static int sha3_256_run_test(test_vector *test, unsigned char *ans) {
-    unsigned char *t;
-    t = sha3_256(test->msg, test->len);
-    printf("\n%d, Hex: 0x", test->len);
-    for (int i=31; i>=0; i--) {printf("%02x", test->md[i]);}
-    puts("");
-    for (int i=31; i>=0; i--) {printf("%02x", ans[i]);}
-    puts("");
-    int response = hex_check((char *) ans, (char *) test->md, 32);
-    free(t);
-    return response;
-}
-
 static int strcmp(const unsigned char *x, const unsigned char *y) {
     unsigned int length = slen(x) - 1;
 
@@ -121,10 +100,10 @@ static int strcmp(const unsigned char *x, const unsigned char *y) {
     return 1;
 }
 
-static test_vector *get_vec_from_file(char *file) {
+static test_vector **get_vec_from_file(char *file) {
     FILE *fp = fopen(file, "r");
     unsigned char *src;
-    test_vector *tests;
+    test_vector **tests;
     int ccnt = 0;
     int lcnt = 0;
 
@@ -169,9 +148,9 @@ static test_vector *get_vec_from_file(char *file) {
     puts("File read");
     while (src[ccnt] != 0x00 ) {
         if (src[ccnt] == 0xa &&
-            (strcmp("Len", &src[ccnt + 1]) ||
-             strcmp("Msg", &src[ccnt + 1]) ||
-             strcmp("MD", &src[ccnt + 1]))) {
+            (strcmp((unsigned char *) "Len", &src[ccnt + 1]) ||
+             strcmp((unsigned char *) "Msg", &src[ccnt + 1]) ||
+             strcmp((unsigned char *) "MD", &src[ccnt + 1]))) {
             lcnt++;
         }
         ccnt++;
@@ -200,13 +179,12 @@ The line count is %d", lcnt);
 
     int liter = 0;
     int iter = 0;
-    int ind = 0;
     int j = 0;
     while (iter <= ccnt && liter <= lcnt) {
         if (src[iter] == 0xa && 
-            (strcmp("Len", &src[iter + 1]) ||
-             strcmp("Msg", &src[iter + 1]) ||
-             strcmp("MD", &src[iter + 1]))) {
+            (strcmp((unsigned char *) "Len", &src[iter + 1]) ||
+             strcmp((unsigned char *) "Msg", &src[iter + 1]) ||
+             strcmp((unsigned char *) "MD", &src[iter + 1]))) {
             line_len[liter] = 0;
             j = iter+1;
             while (src[j] != 0xa) {
@@ -243,15 +221,15 @@ The line count is %d", lcnt);
     puts("Vectors accounted for");
     liter = 0;
     iter = 0;
-    ind = 0;
     int back = 0;
     while ((iter < ccnt) && (liter <= lcnt)) {
         if (src[iter] == 0xa && 
-            (strcmp("Len", &src[iter + 1]) ||
-             strcmp("Msg", &src[iter + 1]) ||
-             strcmp("MD", &src[iter + 1]))) {
+            (strcmp((unsigned char *) "Len", &src[iter + 1]) ||
+             strcmp((unsigned char *) "Msg", &src[iter + 1]) ||
+             strcmp((unsigned char *) "MD", &src[iter + 1]))) {
 
-            if (strcmp("Len", &src[iter + 1]) || strcmp("Msg", &src[iter+1])) {
+            if (strcmp((unsigned char *) "Len", &src[iter + 1]) ||
+                strcmp((unsigned char *) "Msg", &src[iter+1])) {
                 back = 3;
             } else {
                 back = 2;
@@ -272,7 +250,7 @@ The line count is %d", lcnt);
 
     puts("Allocating structs for test vectors");
 
-    tests = calloc(((lcnt / 3) + 1), sizeof(test_vector *));
+    tests = malloc(((lcnt / 3) + 1) * sizeof(test_vector *));
 
     if (tests == NULL) {
         for (int i=0; i < lcnt; i++) {
@@ -283,45 +261,61 @@ The line count is %d", lcnt);
         return NULL;
     }
 
-    puts("Placing test vectors into structs");
-
-    printf("total lines = %d\n", lcnt);
-    j = 0;
-    for (int i=0; i < lcnt; i++) {
-        switch (i % 3) {
-            case 0: {
-                tests[j].len = bytestoint(test_vectors[i]);
-                } break;
-            case 1: {
-                tests[j].msg = strtoint(test_vectors[i]);
-                } break;
-            case 2: {
-                tests[j].md = strtoint(test_vectors[i]);
-                j++;
-                } break;
+    for (int i=0; i < (lcnt / 3); i++) {
+        tests[i] = malloc(sizeof(test_vector));
+        if (tests[i] == NULL) {
+            for (int z=0; z < lcnt; z++){
+                free(test_vectors[z]);
+            }
+            free(test_vectors);
+            free(tests);
+            return NULL;
         }
     }
 
-    puts("Test Vectors allocated into structs");
+    tests[lcnt / 3] = NULL;
+
+    puts("Placing test vectors into structs");
+
+    j = 0;
+    for (int i=0; i < (lcnt / 3); i++) {
+        tests[i]->len = bytestoint(test_vectors[i]);
+        tests[i]->msg = strtoint(test_vectors[i+1]);
+        tests[i]->md = strtoint(test_vectors[i+2]);
+        printf("\n%d :: ", tests[i]->len);
+        hex_dump((char *) tests[i]->msg, tests[i]->len);
+        hex_dump((char *) tests[i]->md, 32);
+    }
+
+    puts("\nTest Vectors allocated into structs");
 
     for (int i=0; i <= lcnt;i++) {
-        printf("freeing 0x%p %s :: ", test_vectors[i], test_vectors[i]);
         free(test_vectors[i]);
-        printf("%d :: %d (freed) \n", i, lcnt);
     }
-    puts("here?");
-
     free(test_vectors);
 
     return tests;
 }
 
+static int sha3_256_run_test(test_vector *test) {
+    unsigned char *ans = sha3_256(test->msg, test->len);
+
+    printf("\n%d, Hex: 0x", test->len);
+    for (int i=31; i>=0; i--) {printf("%02x", test->md[i]);}
+
+    printf("\n%d, Hex: 0x", test->len);
+    for (int i=31; i>=0; i--) {printf("%02x", ans[i]);}
+    puts("");
+
+    int response = hex_check((char *) ans, (char *) test->md, 32);
+    free(ans);
+    return response;
+}
+
+
 int main(int argc, char *argv[]) {
-    unsigned char *t0;
+    char file[38] = ".\\test_vectors\\SHA3_256ShortMsg.rsp";
 
-    char *file = ".\\test_vectors\\sha3_256shortmsg.rsp";
-
-    char sep_test[2] = {SEP, 0x00};
     int z = 0;
     while (file[z] != 0x00) {
         if ((file[z] == '/') || (file[z] == '\\')) {
@@ -329,20 +323,17 @@ int main(int argc, char *argv[]) {
         }
         z++;
     }
-
-
-    test_vector *x = get_vec_from_file(file);
-    free(x);
+    test_vector **x = get_vec_from_file(file);
+    
+    if (x != NULL) {
+        int j = 0;
+        while (x[j] != NULL) {
+            sha3_256_run_test(x[j]);
+            free(x[j]);
+        }
+    } else {
+        printf("Error in getting the test vector\n");
+        free(x);
+    }
     return 0;
-
-//    t0 = sha3_256(test_vec_0, 0); 
-//    printf("\n0 Hex: 0x");
-//    for (int i=31;i>=0;i--) {printf("%02x", t0[i]);}
-//    printf("\n");
-//    printf("0 Ans: 0x");
-//    for (int i=31;i>=0;i--) {printf("%02x", test_vec_0_ret[i]);}
-//    printf("\n");
-//    hex_check((char *) t0, (char *) test_vec_0_ret, 32);
-//    free(t0);
-//    return 0;
 }

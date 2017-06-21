@@ -25,25 +25,24 @@
 
 #else
 
-#define RED(a)         printf("\x1b[31m%s\x1b[31m", a);
-#define GREEN(a)         printf("\x1b[32m%s\x1b[32m", a);
-#define BLUE(a)         printf("\x1b[34m%s\x1b[34m", a);
-#define INTENSE(a)         printf("\x1b[21m%s\x1b[21m", a);
+#define RED(a)         printf("\x1b[31m%s\x1b[0m", a);
+#define GREEN(a)         printf("\x1b[32m%s\x1b[0m", a);
+#define BLUE(a)         printf("\x1b[34m%s\x1b[0m", a);
+#define INTENSE(a)         printf("\x1b[21m%s\x1b[0m", a);
 
 #endif
 
 /* Assumes that dest has enough space, use with care */
-static char *datacat(char *dest, char *src, size_t dsize) {
+static void datacat(char *dest, char *src, size_t dsize) {
     for (int i = 0; i < dsize; i++) {
         dest[i] = src[i];
     }
-    return dest;
 }
 
 extern void pointer_dump(char *data, size_t dsize) {
     int i = 0;
     while (i < dsize) {
-        printf("%02x %llx | ", 
+        printf("%02x %07llx | ", 
             (unsigned char) *(data+i), (unsigned long long) (data+i));
         if (i % 8 == 7 || i+1 == dsize) {
             char tmp[9];
@@ -51,7 +50,8 @@ extern void pointer_dump(char *data, size_t dsize) {
             if (i+1 == dsize) {
                 int k = i;
                 while (k % 8 < 7) {
-                    printf("00 ------ | ");
+
+                    printf("00 ------- | ");
                     k += 1;
                 }
             }
@@ -62,7 +62,7 @@ extern void pointer_dump(char *data, size_t dsize) {
                 if (m < i % 8 + 1) {
                     tmp[m] =  tmp[m] < 0x20 || tmp[m] == 0x7f? 0x2e: tmp[m];
                 } else {
-                    tmp[m] = 0x00;
+                    tmp[m] = 0x20;
                 }
             }
             
@@ -70,6 +70,53 @@ extern void pointer_dump(char *data, size_t dsize) {
         }
         i++;
     }
+}
+
+static void reverse(char *data, size_t dsize) {
+    for (int i =0; i < dsize/2; i++) {
+        char tmp = data[i];
+        data[i] = data[dsize-i-1];
+        data[dsize-i-1] = tmp;
+    }
+}
+
+extern void r_pointer_dump(char *data, size_t dsize) {
+    int i = dsize-1;
+    while (i >= 0) {
+        if (dsize == i+1) {
+            int k = i;
+            while (k % 8 < 7) {
+                printf("00 ------- | ");
+                k += 1;
+            }
+        }
+        printf("%02x %07llx | ", 
+            (unsigned char) *(data+i), (unsigned long long) (data+i));
+        if (i % 8 == 0) {
+            char tmp[9];
+        
+            if (8 > dsize - i ) {
+                datacat(tmp, data+i, (dsize - i) % 8 );
+                for (int m = 0; m < 8; m++) {
+                    if (m < (dsize - i) % 8) {
+                        tmp[m] =  tmp[m] < 0x20 || tmp[m] == 0x7f? 0x2e: tmp[m];
+                    } else {
+                        tmp[m] = 0x20;
+                    }
+                }
+            } else {
+                datacat(tmp, data+i, 8);
+                for (int m = 0; m < 8; m++) {
+                    tmp[m] =  tmp[m] < 0x20 || tmp[m] == 0x7f? 0x2e: tmp[m];
+                }
+            }
+            reverse(tmp, 8);
+            tmp[8] = '\0';
+            
+            printf("|  %s\n", tmp);
+        }
+        i--;
+    }   
 }
 
 extern void hex_dump(char *data, size_t dsize) {
@@ -104,6 +151,7 @@ extern void hex_dump(char *data, size_t dsize) {
 extern int hex_check(char *expec, char *actual, size_t exsize) {
     int i = 0;
     char hexfmt[10];
+    int correct = 0;
     int ret = 1; /* return true */
     while (i < exsize) {
         sprintf(hexfmt, "%02x-%02x ",
@@ -119,7 +167,6 @@ extern int hex_check(char *expec, char *actual, size_t exsize) {
         if (i % 8 == 7 || i+1 == exsize) {
             char expectmp[9];
             char actuatmp[9];
-            int correct = 1;
 
             if (i+1 == exsize) {
                 int k = i;
@@ -146,7 +193,7 @@ extern int hex_check(char *expec, char *actual, size_t exsize) {
                     char tmpout[3] = {expectmp[n], '\0'};
                     if (expectmp[n] != actuatmp[n]) {
                         RED(tmpout);
-                        correct = 0;
+                        correct++;
                     } else {
                         GREEN(tmpout);
                     }
@@ -161,7 +208,7 @@ extern int hex_check(char *expec, char *actual, size_t exsize) {
                     char tmpout[3] = {actuatmp[n], '\0'};
                     if (expectmp[n] != actuatmp[n]) {
                         RED(tmpout);
-                        correct = 0;
+                        correct++;
                     } else {
                         GREEN(tmpout);
                     }
@@ -169,7 +216,8 @@ extern int hex_check(char *expec, char *actual, size_t exsize) {
                     printf(" ");
                 }
             }
-            printf("\n");
+            printf("\n%d bytes are different from one another\n", correct);
+            correct = 0;
         }
         i++;
     }
