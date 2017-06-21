@@ -277,17 +277,41 @@ The line count is %d", lcnt);
 
     puts("Placing test vectors into structs");
 
-    j = 0;
     for (int i=0; i < (lcnt / 3); i++) {
         tests[i]->len = bytestoint(test_vectors[i]);
         tests[i]->msg = strtoint(test_vectors[i+1]);
         tests[i]->md = strtoint(test_vectors[i+2]);
-        printf("\n%d :: ", tests[i]->len);
-        hex_dump((char *) tests[i]->msg, tests[i]->len);
-        hex_dump((char *) tests[i]->md, 32);
+//
+//        printf("0x");
+//        printf("%s", test_vectors[i+1]);
+//        puts("");
+//
+//        j = 0;
+//        printf("0x");
+//        while (j < tests[i]->len) {
+//            printf("%02x", tests[i]->msg[j]);
+//            j++;
+//        }
+//        puts("");
+//
+//        printf("0x");
+//        printf("%s", test_vectors[i+2]);
+//        puts("");
+//
+//        j = 0;
+//        printf("0x");
+//        while (j < 32) {
+//            printf("%02x", tests[i]->md[j]);
+//            j++;
+//        }
+//        puts("");
+//
+//        break;
     }
 
-    puts("\nTest Vectors allocated into structs");
+//    return NULL;
+
+    puts("Test Vectors allocated into structs");
 
     for (int i=0; i <= lcnt;i++) {
         free(test_vectors[i]);
@@ -297,17 +321,29 @@ The line count is %d", lcnt);
     return tests;
 }
 
-static int sha3_256_run_test(test_vector *test) {
+static int sha3_256_run_test(test_vector *test, int print) {
     unsigned char *ans = sha3_256(test->msg, test->len);
+    int response = 1;
 
-    printf("\n%d, Hex: 0x", test->len);
-    for (int i=31; i>=0; i--) {printf("%02x", test->md[i]);}
+    if (print) {
+        printf("\n%d, Hex: 0x", test->len);
+        for (int i=0; i < 32; i++) {printf("%02x", test->md[i]);}
 
-    printf("\n%d, Hex: 0x", test->len);
-    for (int i=31; i>=0; i--) {printf("%02x", ans[i]);}
-    puts("");
+        printf("\n%d, Hex: 0x", test->len);
+        for (int i=0; i < 32; i++) {printf("%02x", ans[i]);}
+        puts("");
+    }
 
-    int response = hex_check((char *) ans, (char *) test->md, 32);
+    if (print) {
+        response = hex_check((char *) ans, (char *) test->md, 32);
+    } else {
+        for (int i=0; i < 32; i++) {
+            if (ans[i] != test->md[i]) {
+                response = 0;
+                break;
+            }
+        }
+    }
     free(ans);
     return response;
 }
@@ -327,10 +363,29 @@ int main(int argc, char *argv[]) {
     
     if (x != NULL) {
         int j = 0;
+        int pass = 0;
+        int prev = pass;
         while (x[j] != NULL) {
-            sha3_256_run_test(x[j]);
-            free(x[j]);
+            prev = pass;
+            pass += sha3_256_run_test(x[j], 0);
+            
+            if (!(pass - prev)) {
+                sha3_256_run_test(x[j], 1);
+                j += 2;
+                break;
+            }
+            j++;
         }
+
+        z = 0;
+        while (x[z] != NULL) {
+            free(x[z]);
+            z++;
+        }
+        free(x);
+
+        printf("%d tests passed. %d tests failed. %d tests run.", 
+                pass, j - pass - 1, j-1);
     } else {
         printf("Error in getting the test vector\n");
         free(x);
