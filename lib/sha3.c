@@ -61,6 +61,10 @@ static int nceil(int a, int b) {
  * The mask is to clear all other bits and the last shift 
  * is to put it into the correct position */
 
+/* s[0] is the highest bit, so you advance from the left to the right
+ * in terms of computation. i.e. from 0 to n
+ */
+
 /* w is b/25, mp must be the same size as m which is w * 25*/
 static unsigned char *theta(unsigned char *m, unsigned char *mp, int w) {
     for (int i = 0; i < (w * 25 / 8); i++) {mp[i] = 0x00;}
@@ -80,23 +84,21 @@ static unsigned char *theta(unsigned char *m, unsigned char *mp, int w) {
     }
 
     for (int i=0; i < nceil(5 * w, 8); i++) { D[i] = 0x00;}
+
     for (int x=0; x < 5; x++) {
         for (int z=0; z < w; z++) {
             int pair = (x * w) + z;
-            /*
-            printf("%03d = %d ", pair, (((m[pair / 8] >> (pair % 8))
-                         ^ (m[(w * (x+5) + z) / 8] >> ((w * (x+5) + z) % 8))
-                         ^ (m[(w * (x+10) + z) / 8] >> ((w * (x+10) + z) % 8))
-                         ^ (m[(w * (x+15) + z) / 8] >> ((w * (x+15) + z) % 8))
-                         ^ (m[(w * (x+20) + z) / 8] >> ((w * (x+20) + z) % 8))) & 1)); */
-            C[pair / 8] ^= (-(((m[pair / 8] >> (pair % 8))
+            for (int y=0; y < 5; y++) {
+                int bit = (w * (x+(y*5)) + z);
+                C[pair / 8] ^= (-((m[bit / 8] >> (bit % 8)) & 1) 
+                             ^ C[pair / 8]) & (1 << (pair % 8));
+            /* C[pair / 8] ^= (-(((m[pair / 8] >> (pair % 8))
                          ^ (m[(w * (x+5) + z) / 8] >> ((w * (x+5) + z) % 8))
                          ^ (m[(w * (x+10) + z) / 8] >> ((w * (x+10) + z) % 8))
                          ^ (m[(w * (x+15) + z) / 8] >> ((w * (x+15) + z) % 8))
                          ^ (m[(w * (x+20) + z) / 8] >> ((w * (x+20) + z) % 8))) & 1)
-                         ^ C[pair / 8]) & (1 << (pair % 8));
-            /* printf("|%02x| ", C[pair /8]); */
-            /*if ((z + 1) % 8 == 0) { printf("\n");} */
+                         ^ C[pair / 8]) & (1 << (pair % 8)); */
+            }
         }
     }
 
@@ -127,6 +129,7 @@ static unsigned char *theta(unsigned char *m, unsigned char *mp, int w) {
                 int bit = w * (5 * y + x) + z;
                 /* printf("%01x", (((m[bit / 8] >> (bit % 8))
                              ^ (D[pair / 8] >> (pair % 8))) & 0x01)); */
+
                 mp[bit / 8] ^= (-(((m[bit / 8] >> (bit % 8))
                              ^ (D[pair / 8] >> (pair % 8))) & 1) 
                              ^ mp[bit / 8]) & (1 << (bit % 8));
@@ -262,14 +265,14 @@ static unsigned char *round(unsigned char *m, int w, int ir) {
 
     mp = theta(m, mp, w);
 
-/*    printf("After theta:\n");
+    printf("After theta:\n");
     for (int i=199; i >= 0; i--) {
         printf("%02x ", mp[i]);
         if ((200 - i) % 16 == 0) {
             printf("\n");
         }
     }
-    printf("\n"); */
+    printf("\n");
 
     m = rho(mp, m, w);
     mp = chi(m, mp, w);
