@@ -384,7 +384,7 @@ int main(int argc, char *argv[]) {
         }
         free(x);
 
-        printf("%d tests passed. %d tests failed. %d tests run.", 
+        printf("%d tests passed. %d tests failed. %d tests run.\n", 
                 pass, j - pass - 1, j-1);
     } else {
         printf("Error in getting the test vector\n");
