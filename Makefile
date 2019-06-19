@@ -21,3 +21,8 @@ $(ODIR)utils.o: $(CLIBS)utils.c
 
 $(ODIR)sha3.o: $(CLIBS)sha3.c
 	$(CC) -o $@ -c $< $(CFLAGS) $(INC)
+
+.PHONY: clean
+clean: 
+	rm sha3_tests
+	rm obj/*

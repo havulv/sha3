@@ -136,7 +136,7 @@ static test_vector **get_vec_from_file(char *file) {
         if (ferror(fp) != 0) {
             fputs("Error reading file", stdout);
         } else {
-            src[++newLen] = 0x00;
+            src[newLen] = 0x00;
         }
     } else {
         fclose(fp);
